@@ -1,0 +1,388 @@
+@import url('reset.css');
+@import '_mixin';
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 5px 10px;
+    position: sticky;
+    top: 0;
+    border-bottom: 2px solid thistle;
+    background-color: white;
+
+    .logo{
+        height: 100%;
+
+        img{
+            height: 100%;
+        }
+    }
+
+    .links{
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        
+        div{
+            cursor: pointer;
+            font-size: 1.8rem;
+        }
+    }
+
+    .formulaire{
+        display: flex;
+        gap: 30px;
+        margin-right: 20px;
+        height: 100%;
+        align-items: center;
+        
+        div{
+            cursor: pointer;
+            font-size: 1.2rem;
+            border: 2px solid #7facd6;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        #loginNav{
+            background-color: #7facd6;
+            color: white;
+
+            &:hover{
+                $color: darken($color: #7facd6, $amount: 30%);
+                background-color: $color;
+                border-color: $color;
+            }
+        }
+
+        #signNav{
+            background-color: white;
+            color: #7facd6;
+
+            &:hover{
+                $color: darken($color: #7facd6, $amount: 30%);
+                background-color: $color;
+                color: white;
+                border-color: $color;
+            }
+        }
+    }
+}
+
+#loginDialog{
+    border: 2px solid rgba(0 0 0 / 30%);
+    padding: 20px;
+    border-radius: 10px;
+    width: 450px;
+    height: fit-content;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .close{
+        position: absolute;
+        cursor: pointer;
+        width: fit-content;
+        right: 10px;
+        top: -1px;
+        transform: scale(1.5);
+    }
+
+    div{
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+
+    input:not(input[type="checkbox"]){
+        width: 100%;
+        margin: 5px 0;
+        background: white;
+        outline: none;
+        padding: 5px 10px;
+        font-size: 1.5rem;
+        border-radius: 7px;
+    }
+
+    .inputSign{
+        border: 2px solid rgba(0 0 0 / 60%);
+        //border-left: 1px solid rgba(0 0 0 / 80%);
+        
+    }
+    .btn{
+        display: flex;
+        gap: 20px;
+
+        button{
+            outline: none;
+            color: white;
+            border-radius: 7px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+
+        }
+
+        .send{
+            $color: darken(rgb(0, 255, 0), 10%);
+            background-color: $color;
+            font-size: 1.5rem;
+            flex-grow: 1;
+
+            &:hover{
+                background-color: lighten($color: $color, $amount: 15%);
+            }
+        }
+
+        .create{
+            background-color: blue;
+            font-size: 1rem;
+            flex-grow: 1;
+
+            &:hover{
+                background-color: lighten($color: blue, $amount: 15%);
+            }
+        }
+    }
+
+    .show{
+        position: relative;
+        svg{
+            position: absolute;
+            top: 13px;
+            right: 10px;
+            cursor: pointer;
+        }
+    }
+
+    label{
+        font-size: 1.5rem;
+    }
+
+    header{
+        font-size: 2rem;
+        font-weight: bold;
+        width: 100%;
+        border-bottom: 2px solid thistle;
+        p{
+            text-align: center;
+            margin-bottom: 5px;
+        }
+    }
+
+    .rester{
+        display: flex;
+
+        label{
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        input{
+            accent-color: blue;
+            transform: scale(1.2);
+        }
+
+        span{
+            flex-grow: 1;
+            font-size: 1.1rem;
+            text-align: end;
+            cursor: pointer;
+            margin-right: 10px;
+            //border-bottom: 1px solid greenyellow;
+
+            &:hover{
+                text-decoration: underline green;
+            }
+        }
+    }
+}
+
+
+.aboutUs{
+    display: flex;
+
+    .img{
+        flex-grow: 1;
+        display: grid;
+        place-items: center;
+    }
+
+    .welcome, .how, .developers{
+        border: 2px solid rgba(0 0 0 / 60%);
+        padding: 20px;
+        border-radius: 10px;
+        margin: 10px 0;
+    }
+
+    .aboutUs1{
+        padding: 20px;
+        gap: 10px;
+
+        p{
+            font-size: large;
+        }
+
+        h2{
+            font-size: 3rem;
+            margin: 10px 0;
+        }
+      
+    }
+
+    .developers{
+
+        display: flex;
+        margin-bottom: 0;
+        gap: 20px;
+        justify-content: space-between;
+
+        .divinside{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+                        
+            img{
+            width: 70px;
+            height: 70px;
+            border-radius:50%;
+            }
+        }
+    }
+}
+
+
+.contactUs{
+    display: flex;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    width: 700px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 7px;
+    flex-direction: column;
+    gap: 20px;
+
+    .info{
+        display: flex;
+        gap: 20px;
+
+        .mail, .userName{
+            flex-grow: 1;
+
+            label{
+                margin-left: 10px;
+                font-size: 1.5rem;
+            }
+
+            input{
+                width: 100%;
+                height: 35px;
+                outline: none;
+                border: 2px solid rgba(0 0 0 / 60%);
+                border-radius: 7px;
+                margin-top: 5px;
+                padding: 0 10px;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    textarea{
+        width: 100%;
+        border: 2px solid black;
+        border-radius: 7px;
+        padding: 5px 10px;
+        font-size: 1.2rem;
+        resize: vertical;
+        max-height: 400px;
+    }
+
+    .textComment{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+
+        button{
+            width: 200px;
+            border-radius: 7px;
+            background-color: rgb(0, 255, 0);
+            color: white;
+            font-size: 1.5rem;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            
+            &:hover{
+                background-color: darken(rgba(0, 255, 0), 20%);
+            }
+        }
+    }
+}
+
+
+.signin{
+
+    #loginDialog{
+        width: 450px;
+    }
+
+    .infor{
+        display: flex;
+        gap: 10px;
+    }
+
+    input{
+        border: 1px solid rgba(0 0 0 / 60%);
+        font-size: 1rem !important;
+        height: 40px;
+    }
+
+    .btn{        
+        button{
+            width: 50% !important;
+        }
+
+        .create{
+            font-size: 1.5rem !important;
+        }
+    }
+
+    .email, .userName, .passwd{
+        position: relative;
+    }
+
+    .warning{
+        position: absolute;
+        bottom: 12px;
+        right: 10px;
+    }
+}
+
+
+//event
+
+.eventPage{
+    padding: 20px;
+    .card{
+        padding: 5px;
+        display: flex;
+        width: 300px;
+        height: 350px;
+        border: 1px solid black;
+        justify-content: center;
+        img{
+           
+            width: 290px !important;
+            height: 200px !important;
+            border: 1px solid black;
+        }
+    }
+}

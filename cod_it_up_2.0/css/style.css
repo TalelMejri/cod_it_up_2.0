@@ -1,0 +1,347 @@
+@import url("reset.css");
+.hidden {
+  display: none !important;
+}
+
+body {
+  height: 100vh;
+}
+
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(5px) saturate(0.5);
+          backdrop-filter: blur(5px) saturate(0.5);
+  z-index: 10;
+  cursor: default;
+  display: grid;
+  place-items: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 5px 10px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid thistle;
+  background-color: white;
+}
+nav .logo {
+  height: 100%;
+}
+nav .logo img {
+  height: 100%;
+}
+nav .links {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+nav .links div {
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+nav .formulaire {
+  display: flex;
+  gap: 30px;
+  margin-right: 20px;
+  height: 100%;
+  align-items: center;
+}
+nav .formulaire div {
+  cursor: pointer;
+  font-size: 1.2rem;
+  border: 2px solid #7facd6;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+nav .formulaire #loginNav {
+  background-color: #7facd6;
+  color: white;
+}
+nav .formulaire #loginNav:hover {
+  background-color: #2e608e;
+  border-color: #2e608e;
+}
+nav .formulaire #signNav {
+  background-color: white;
+  color: #7facd6;
+}
+nav .formulaire #signNav:hover {
+  background-color: #2e608e;
+  color: white;
+  border-color: #2e608e;
+}
+
+#loginDialog {
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  width: 450px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+#loginDialog .close {
+  position: absolute;
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  right: 10px;
+  top: -1px;
+  transform: scale(1.5);
+}
+#loginDialog div {
+  margin-top: 10px;
+  width: 100%;
+}
+#loginDialog input:not(input[type=checkbox]) {
+  width: 100%;
+  margin: 5px 0;
+  background: white;
+  outline: none;
+  padding: 5px 10px;
+  font-size: 1.5rem;
+  border-radius: 7px;
+}
+#loginDialog .inputSign {
+  border: 2px solid rgba(0, 0, 0, 0.6);
+}
+#loginDialog .btn {
+  display: flex;
+  gap: 20px;
+}
+#loginDialog .btn button {
+  outline: none;
+  color: white;
+  border-radius: 7px;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+#loginDialog .btn .send {
+  background-color: #00cc00;
+  font-size: 1.5rem;
+  flex-grow: 1;
+}
+#loginDialog .btn .send:hover {
+  background-color: #1aff1a;
+}
+#loginDialog .btn .create {
+  background-color: blue;
+  font-size: 1rem;
+  flex-grow: 1;
+}
+#loginDialog .btn .create:hover {
+  background-color: #4d4dff;
+}
+#loginDialog .show {
+  position: relative;
+}
+#loginDialog .show svg {
+  position: absolute;
+  top: 13px;
+  right: 10px;
+  cursor: pointer;
+}
+#loginDialog label {
+  font-size: 1.5rem;
+}
+#loginDialog header {
+  font-size: 2rem;
+  font-weight: bold;
+  width: 100%;
+  border-bottom: 2px solid thistle;
+}
+#loginDialog header p {
+  text-align: center;
+  margin-bottom: 5px;
+}
+#loginDialog .rester {
+  display: flex;
+}
+#loginDialog .rester label {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+#loginDialog .rester input {
+  accent-color: blue;
+  transform: scale(1.2);
+}
+#loginDialog .rester span {
+  flex-grow: 1;
+  font-size: 1.1rem;
+  text-align: end;
+  cursor: pointer;
+  margin-right: 10px;
+}
+#loginDialog .rester span:hover {
+  -webkit-text-decoration: underline green;
+          text-decoration: underline green;
+}
+
+.aboutUs {
+  display: flex;
+}
+.aboutUs .img {
+  flex-grow: 1;
+  display: grid;
+  place-items: center;
+}
+.aboutUs .welcome, .aboutUs .how, .aboutUs .developers {
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+.aboutUs .aboutUs1 {
+  padding: 20px;
+  gap: 10px;
+}
+.aboutUs .aboutUs1 p {
+  font-size: large;
+}
+.aboutUs .aboutUs1 h2 {
+  font-size: 3rem;
+  margin: 10px 0;
+}
+.aboutUs .developers {
+  display: flex;
+  margin-bottom: 0;
+  gap: 20px;
+  justify-content: space-between;
+}
+.aboutUs .developers .divinside {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.aboutUs .developers .divinside img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.contactUs {
+  display: flex;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  width: 700px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 7px;
+  flex-direction: column;
+  gap: 20px;
+}
+.contactUs .info {
+  display: flex;
+  gap: 20px;
+}
+.contactUs .info .mail, .contactUs .info .userName {
+  flex-grow: 1;
+}
+.contactUs .info .mail label, .contactUs .info .userName label {
+  margin-left: 10px;
+  font-size: 1.5rem;
+}
+.contactUs .info .mail input, .contactUs .info .userName input {
+  width: 100%;
+  height: 35px;
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  border-radius: 7px;
+  margin-top: 5px;
+  padding: 0 10px;
+  font-size: 1.2rem;
+}
+.contactUs textarea {
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 7px;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  resize: vertical;
+  max-height: 400px;
+}
+.contactUs .textComment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.contactUs .textComment button {
+  width: 200px;
+  border-radius: 7px;
+  background-color: rgb(0, 255, 0);
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+.contactUs .textComment button:hover {
+  background-color: #009900;
+}
+
+.signin #loginDialog {
+  width: 450px;
+}
+.signin .infor {
+  display: flex;
+  gap: 10px;
+}
+.signin input {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  font-size: 1rem !important;
+  height: 40px;
+}
+.signin .btn button {
+  width: 50% !important;
+}
+.signin .btn .create {
+  font-size: 1.5rem !important;
+}
+.signin .email, .signin .userName, .signin .passwd {
+  position: relative;
+}
+.signin .warning {
+  position: absolute;
+  bottom: 12px;
+  right: 10px;
+}
+
+.eventPage {
+  padding: 20px;
+}
+.eventPage .card {
+  padding: 5px;
+  display: flex;
+  width: 300px;
+  height: 350px;
+  border: 1px solid black;
+  justify-content: center;
+}
+.eventPage .card img {
+  width: 290px !important;
+  height: 200px !important;
+  border: 1px solid black;
+}/*# sourceMappingURL=style.css.map */
+
+
+/** reset **/
